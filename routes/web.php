@@ -11,7 +11,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\SalesController;
+use App\Http\Controllers\SalesInvoiceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,7 +41,9 @@ Route::group(['middleware'=>'auth'],function(){
     Route::resource('users',UserController::class);
     Route::resource('category',CategoryController::class);
     Route::resource('products',ProductController::class);
-    
+
+    Route::get('sal',[SalesController::class, 'index']);
+    Route::get('sales/{id}',[SalesInvoiceController::class, 'index'])->name('user_sales');
 });
 
 
