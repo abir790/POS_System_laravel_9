@@ -17,6 +17,7 @@ class CategoryController extends Controller
     {
         $category=Category::all();
         return view('category.categories',compact('category'));
+        // or return view('category.categories',['category'=>$catrgory]);
         //return "Category";
     }
 
